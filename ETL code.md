@@ -10,4 +10,7 @@ sc = SparkContext('local')
 spark = SparkSession.builder.appName('abc').getOrCreate()
 df=spark.read.csv("s3://project-24/temp/2018.csv",header=True)
 
+#d2=d1.fillna(0,subset=['cancellation_code'])
+d2=df.withColumn("CANCELLATION_CODE", when(df.CANCELLATION_CODE !="", df.CANCELLATION_CODE).otherwise('F'))
+
 ```
