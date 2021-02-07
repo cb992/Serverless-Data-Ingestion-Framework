@@ -30,5 +30,5 @@ columns_to_drop = ['op_carrier_fl_num',
 'late_aircraft_delay',
 'Unnamed: 27'
 ]
-
+d2=d2.drop(*columns_to_drop)
 ```
